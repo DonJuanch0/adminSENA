@@ -13,6 +13,6 @@ class Course extends Model
 
     public function apprentices()
     {
-        return $this->belongsToMany(Apprentice::class);
+        return $this->hasMany(Apprentice::class);
     }
 }

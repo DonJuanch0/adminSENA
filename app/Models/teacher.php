@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class teacher extends Model
+class Teacher extends Model
 {
     public function area()
     {
@@ -18,7 +18,7 @@ class teacher extends Model
 
     public function computers()
     {
-        return $this->belongsToMany(Computer::class);
+        return $this->hasMany(Computer::class);
     }
 
     public function courses()
