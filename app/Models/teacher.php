@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+
+    protected $fillable = ['name', 'email','area_id', 'training_center_id'];
     public function area()
     {
         return $this->belongsTo(Area::class);
@@ -14,11 +16,6 @@ class Teacher extends Model
     public function trainingCenter()
     {
         return $this->belongsTo(TrainingCenter::class);
-    }
-
-    public function computers()
-    {
-        return $this->hasMany(Computer::class);
     }
 
     public function courses()

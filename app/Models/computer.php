@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Computer extends Model
 {
-    public function teacher()
+
+    protected $fillable = ['number', 'brand', 'model'];
+    public function apprentices()
     {
-        return $this->belongsTo(Teacher::class);
+        return $this->hasMany(Apprentice::class);
     }
 }
