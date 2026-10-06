@@ -3,6 +3,12 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Support\Env;
+
+// Las dos aplicaciones (este backend y clienteAdminSENA) corren en el mismo
+// Apache. Sin esta linea, el .env de un proyecto se filtra al otro y el
+// backend termina usando la base de datos y el nombre del front.
+Env::disablePutenv();
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
