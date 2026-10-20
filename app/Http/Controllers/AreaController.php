@@ -19,9 +19,9 @@ class AreaController extends Controller
         return response()->json($area->load(['courses', 'teachers']));
     }
 
-     public function store(Area $area)
+     public function store()
     {
-        $area->update(request()->all());
+        $area = Area::create(request()->all());
         return response()->json($area);
     }       
 
