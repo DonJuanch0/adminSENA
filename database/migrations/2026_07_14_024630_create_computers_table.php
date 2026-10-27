@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->integer('number');
+            $table->string('image_url')->nullable();
+            $table->string('image_public_id')->nullable();
             $table->timestamps();
         });
     }
